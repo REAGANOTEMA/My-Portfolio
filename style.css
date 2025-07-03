@@ -1,0 +1,182 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ddd;
+}
+
+body {
+  background: linear-gradient(135deg, #1a2634, #2e3b4e);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* Container */
+header, section, footer {
+  background: rgba(45, 58, 75, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  padding: 2rem 3rem;
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Header styles without glow */
+header .glow {
+  font-size: 3rem;
+  color: #b22222; /* deep red */
+  text-shadow: 1px 1px 2px #000000aa;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+header p {
+  color: #f0e5ff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* About section */
+.about {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #b22222;
+  box-shadow: 0 0 20px #8b0000;
+  object-fit: cover;
+}
+
+.about p {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #ddd;
+  padding-left: 1rem;
+}
+
+ul li::before {
+  content: "✔";
+  color: #b22222;
+  margin-right: 8px;
+}
+
+/* Section titles */
+h2 {
+  color: #f5f5f5;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px #00000088;
+}
+
+/* Call to action */
+.cta {
+  background: #2e3b4e;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f0e5ff;
+  box-shadow: 0 0 15px #b22222;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Gallery container for sliding */
+.gallery {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  gap: 1.5rem;
+  position: relative;
+}
+
+/* Gallery images styling */
+.gallery img {
+  border-radius: 12px;
+  min-width: 250px;
+  height: 160px;
+  object-fit: cover;
+  box-shadow: 0 0 15px #8b0000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #b22222;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  user-select: none;
+}
+
+/* GitHub icon container */
+.github-link {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.github-link img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(1px 1px 1px #000);
+  transition: transform 0.3s ease;
+}
+
+.github-link img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(2px 2px 2px #b22222);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  header .glow {
+    font-size: 2.2rem;
+  }
+}
