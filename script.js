@@ -55,3 +55,14 @@ galleryFigures.forEach(figure => {
     figure.style.boxShadow = '0 10px 20px rgba(139,0,0,0.15)';
   });
 });
+// Hamburger menu toggle for mobile navigation
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+});
