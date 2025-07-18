@@ -8,11 +8,38 @@
 </head>
 <body>
 
+<!-- ✅ Hamburger Navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <h1 id="site-title">REAGAN OTEMA</h1>
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="nav-links"
+      type="button"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ✅ Header Content -->
 <header>
-  <h1 id="site-title">REAGAN OTEMA</h1>
   <p class="tagline">Passionate Tech Enthusiast & Remote Job Seeker | Based in Uganda</p>
 </header>
 
+<!-- ✅ Sections -->
 <section id="about">
   <h2>About Me</h2>
   <div class="profile">
@@ -31,7 +58,7 @@
   <h2>Experience & Education</h2>
   <ul>
     <li><strong>Brigham Young University - Idaho</strong><br />State of Idaho, United States of America<br />
-      Tech-focused studies from Aug 2024 to Sep 2027, expected graduation in 2027.</li>
+      Tech-focused studies from Aug 2024 to Sep 2026, expected graduation in 2027.</li>
     <li><strong>Tel Aviv University</strong><br />Tel Aviv, Israel<br />
       Expanded my Clinical Pathology skills with international exposure and collaborative projects.</li>
     <li><strong>Clinical Work</strong><br />Gained critical observational skills and strong detail orientation while working in clinical environments.</li>
@@ -102,7 +129,7 @@
     <figure>
       <img src="images/clinic1.jpg" alt="Reagan sitting next to a microscope" />
       <figcaption>
-        Sitting attentively next to a microscope, fully immersed in scientific research and discovery, blending curiosity with precision and care to unlock new insights in clinical science.
+        Sitting attentively next to a microscope, fully immersed in scientific research and discovery, blending curiosity with precision and care.
       </figcaption>
     </figure>
     <figure>
@@ -115,7 +142,6 @@
       <img src="images/clinic3.jpg" alt="Reagan with clinical team" />
       <figcaption>
         Collaborating closely with my clinical team to ensure the highest standards of healthcare, teamwork, and scientific accuracy.
-        This experience strengthened my communication and problem solving skills in fast paced, dynamic healthcare environments.
       </figcaption>
     </figure>
   </div>
@@ -125,7 +151,7 @@
     <figure>
       <img src="images/project1.jpg" alt="Reagan coding on the computer" />
       <figcaption>
-        Immersed in coding, developing innovative software solutions that drive efficiency and solve real world problems.
+        Immersed in coding, developing innovative software solutions that drive efficiency and solve real-world problems.
       </figcaption>
     </figure>
     <figure>
@@ -137,7 +163,7 @@
     <figure>
       <img src="images/project3.jpg" alt="Reagan and team collaborating" />
       <figcaption>
-        Team synergy at its best collaborating to create technology that matters, combining creativity, expertise, and passion.
+        Team synergy at its best — collaborating to create technology that matters, combining creativity, expertise, and passion.
       </figcaption>
     </figure>
   </div>
@@ -190,6 +216,17 @@
   <p>&copy; 2025 Reagan Otema | Seeking Remote Tech Opportunities</p>
 </footer>
 
-<script src="script.js"></script>
+<!-- ✅ Hamburger JS toggle (You will add the real script later) -->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    const expanded = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", !expanded);
+  });
+</script>
+
 </body>
 </html>
