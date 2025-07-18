@@ -12,14 +12,7 @@
 <nav class="navbar">
   <div class="nav-container">
     <h1 id="site-title">REAGAN OTEMA</h1>
-    <button
-      class="hamburger"
-      id="hamburger"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      aria-controls="nav-links"
-      type="button"
-    >
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" type="button">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -34,12 +27,12 @@
   </div>
 </nav>
 
-<!-- ✅ Header Content -->
+<!-- ✅ Header -->
 <header>
   <p class="tagline">Passionate Tech Enthusiast & Remote Job Seeker | Based in Uganda</p>
 </header>
 
-<!-- ✅ Sections -->
+<!-- ✅ About Section -->
 <section id="about">
   <h2>About Me</h2>
   <div class="profile">
@@ -54,6 +47,7 @@
   </div>
 </section>
 
+<!-- ✅ Experience Section -->
 <section id="experience">
   <h2>Experience & Education</h2>
   <ul>
@@ -66,6 +60,7 @@
   </ul>
 </section>
 
+<!-- ✅ Skills Section -->
 <section id="skills">
   <h2>Software Development Skills</h2>
   <div class="skills-grid">
@@ -118,9 +113,20 @@
         <li>Adaptability & Continuous Learning</li>
       </ul>
     </div>
-  </div>
+
+    <!-- ✅ Final Filler Card with Matched Dimensions -->
+   <!-- inside the skills-grid -->
+<div class="skill-category image-fill">
+  <img src="images/Technology visual.webp" alt="Technology visual" />
+  <p class="image-caption">
+    Cutting-edge technology drives innovation and progress, inspiring new solutions for a connected world.
+  </p>
+</div>
+
+
 </section>
 
+<!-- ✅ Gallery Section -->
 <section id="gallery">
   <h2>Gallery</h2>
 
@@ -128,21 +134,15 @@
   <div class="gallery" id="clinic-gallery">
     <figure>
       <img src="images/clinic1.jpg" alt="Reagan sitting next to a microscope" />
-      <figcaption>
-        Sitting attentively next to a microscope, fully immersed in scientific research and discovery, blending curiosity with precision and care.
-      </figcaption>
+      <figcaption>Sitting attentively next to a microscope, immersed in scientific research and discovery.</figcaption>
     </figure>
     <figure>
       <img src="images/clinic2.jpg" alt="Using the microscope" />
-      <figcaption>
-        Analyzing samples under the microscope with meticulous attention to detail, demonstrating my dedication to clinical excellence.
-      </figcaption>
+      <figcaption>Analyzing samples under the microscope, demonstrating dedication to clinical excellence.</figcaption>
     </figure>
     <figure>
       <img src="images/clinic3.jpg" alt="Reagan with clinical team" />
-      <figcaption>
-        Collaborating closely with my clinical team to ensure the highest standards of healthcare, teamwork, and scientific accuracy.
-      </figcaption>
+      <figcaption>Collaborating with my clinical team to ensure high standards of healthcare and accuracy.</figcaption>
     </figure>
   </div>
 
@@ -150,21 +150,15 @@
   <div class="gallery" id="project-gallery">
     <figure>
       <img src="images/project1.jpg" alt="Reagan coding on the computer" />
-      <figcaption>
-        Immersed in coding, developing innovative software solutions that drive efficiency and solve real-world problems.
-      </figcaption>
+      <figcaption>Immersed in coding, developing innovative software solutions.</figcaption>
     </figure>
     <figure>
       <img src="images/project2.jpg" alt="Computer screen with code" />
-      <figcaption>
-        Writing clean, scalable code displayed on my screen, powering future technologies with clarity and precision.
-      </figcaption>
+      <figcaption>Writing clean, scalable code powering future technologies.</figcaption>
     </figure>
     <figure>
       <img src="images/project3.jpg" alt="Reagan and team collaborating" />
-      <figcaption>
-        Team synergy at its best — collaborating to create technology that matters, combining creativity, expertise, and passion.
-      </figcaption>
+      <figcaption>Collaborating with a team to build creative, functional technology products.</figcaption>
     </figure>
   </div>
 
@@ -176,6 +170,7 @@
   </p>
 </section>
 
+<!-- ✅ Contact Section -->
 <section id="contact">
   <h2>Contact Me</h2>
   <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
@@ -192,35 +187,23 @@
   </form>
 </section>
 
+<!-- ✅ Footer -->
 <footer>
   <div class="footer-contact">
-    <a href="mailto:reaganotema2022@gmail.com" title="Send Email" aria-label="Email">
-      <img src="icons/email.png" alt="Email Icon" />
-    </a>
-    <a href="https://www.linkedin.com/in/reagan-otema" target="_blank" rel="noopener" title="LinkedIn Profile" aria-label="LinkedIn">
-      <img src="icons/linkedin.png" alt="LinkedIn Icon" />
-    </a>
-    <a href="https://github.com/REAGANOTEMA/Reagan-Otema" target="_blank" rel="noopener" title="GitHub Repository" aria-label="GitHub Repository">
-      <img src="icons/github.png" alt="GitHub Icon" />
-    </a>
-    <a href="https://www.facebook.com/reagan.otema.2025" title="Facebook Profile" aria-label="Facebook">
-      <img src="icons/facebook.png" alt="Facebook Icon" />
-    </a>
-    <a href="tel:+256772514889" title="Call Phone" aria-label="Phone">
-      <img src="icons/call1.png" alt="Phone Icon" />
-    </a>
-    <a href="tel:+25677514889" title="Whatsapp" aria-label="Whatsapp">
-      <img src="icons/whatsapp.png" alt="Whatsapp Icon" />
-    </a>
+    <a href="mailto:reaganotema2022@gmail.com"><img src="icons/email.png" alt="Email Icon" /></a>
+    <a href="https://www.linkedin.com/in/reagan-otema" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn Icon" /></a>
+    <a href="https://github.com/REAGANOTEMA/Reagan-Otema" target="_blank"><img src="icons/github.png" alt="GitHub Icon" /></a>
+    <a href="https://www.facebook.com/reagan.otema.2025"><img src="icons/facebook.png" alt="Facebook Icon" /></a>
+    <a href="tel:+256772514889"><img src="icons/call1.png" alt="Phone Icon" /></a>
+    <a href="tel:+25677514889"><img src="icons/whatsapp.png" alt="WhatsApp Icon" /></a>
   </div>
   <p>&copy; 2025 Reagan Otema | Seeking Remote Tech Opportunities</p>
 </footer>
 
-<!-- ✅ Hamburger JS toggle (You will add the real script later) -->
+<!-- ✅ JavaScript for Hamburger Menu -->
 <script>
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
-
   hamburger.addEventListener("click", function () {
     navLinks.classList.toggle("active");
     const expanded = hamburger.getAttribute("aria-expanded") === "true";
