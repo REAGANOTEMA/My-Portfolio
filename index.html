@@ -4,15 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Reagan Otema - Professional Portfolio</title>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ✅ Hamburger Navbar -->
+<!-- ================= -->
+<!-- Rain Canvas Layer -->
+<!-- ================= -->
+<canvas id="rain-canvas"></canvas>
+
+<!-- ================= -->
+<!-- Cartoon Character -->
+<!-- ================= -->
+<div id="cartoon-character">
+  <img src="https://cdn-icons-png.flaticon.com/512/528/528098.png" alt="Cartoon Character" />
+</div>
+
+<!-- ================= -->
+<!-- Navbar -->
+<!-- ================= -->
 <nav class="navbar">
   <div class="nav-container">
-    <h1 id="site-title">REAGAN OTEMA</h1>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" type="button">
+    <h1 id="site-title">
+      <span class="highlight">REAGAN</span> <span class="accent">OTEMA</span>
+    </h1>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -21,46 +42,55 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#downloads">Downloads</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- ✅ Header -->
+<!-- ================= -->
+<!-- Header -->
+<!-- ================= -->
 <header>
-  <p class="tagline">Passionate Tech Enthusiast & Remote Job Seeker | Based in Uganda</p>
+  <p class="tagline">⚡ Passionate Tech Enthusiast & Remote Job Seeker | Based in Uganda ⚡</p>
 </header>
 
-<!-- ✅ About Section -->
+<!-- ================= -->
+<!-- About Section -->
+<!-- ================= -->
 <section id="about">
   <h2>About Me</h2>
   <div class="profile">
-    <img src="images/profile.jpg" alt="Reagan Otema Profile Picture" class="profile-img" />
+    <img src="images/profile.jpg" alt="Reagan Otema" class="profile-img"/>
     <p>
-      I'm Reagan Otema, a dedicated technology professional currently based in Uganda, seeking remote opportunities.
-      I studied at Brigham Young University - Idaho, United States of America (Aug 2024 - Sep 2027, expected graduation 2027),
-      focusing on technology innovation, programming, and teamwork.
-      Additionally, I pursued studies at Tel Aviv University, Israel, further broadening my international experience and technical expertise.
-      My clinical background sharpened my analytical and problem-solving skills, though my passion lies deeply in technology.
+      I'm <strong>Reagan Otema</strong>, a dedicated technology professional based in Uganda.  
+      I studied at <strong>Brigham Young University - Idaho (2024-2027)</strong> focusing on tech innovation, programming, and teamwork.  
+      I also gained international exposure at <strong>Tel Aviv University, Israel</strong>.  
+      My clinical background enhanced my analytical skills, but my passion is technology.  
+      I have learned programming with <strong>Data Structures</strong>, <strong>Web Frontend Development (WDD231)</strong>, and <strong>Professional Writing</strong> in technical and professional contexts.
     </p>
   </div>
 </section>
 
-<!-- ✅ Experience Section -->
+<!-- ================= -->
+<!-- Experience Section -->
+<!-- ================= -->
 <section id="experience">
   <h2>Experience & Education</h2>
   <ul>
-    <li><strong>Brigham Young University - Idaho</strong><br />State of Idaho, United States of America<br />
-      Tech-focused studies from Aug 2024 to Sep 2026, expected graduation in 2027.</li>
-    <li><strong>Tel Aviv University</strong><br />Tel Aviv, Israel<br />
-      Expanded my Clinical Pathology skills with international exposure and collaborative projects.</li>
-    <li><strong>Clinical Work</strong><br />Gained critical observational skills and strong detail orientation while working in clinical environments.</li>
-    <li><strong>Technology Projects</strong><br />Hands-on experience with coding, software development, and project management.</li>
+    <li><strong>Brigham Young University - Idaho</strong><br>Tech-focused studies (2024-2027)</li>
+    <li><strong>Tel Aviv University</strong><br>Clinical Pathology with collaborative projects</li>
+    <li><strong>Clinical Work</strong><br>Critical observational and detail-oriented skills</li>
+    <li><strong>Technology Projects</strong><br>Hands-on coding, development, and project management</li>
+    <li><strong>Data Structures & Web Development</strong><br>Programming with complex data structures, WDD231, and front-end skills</li>
+    <li><strong>Professional Writing</strong><br>Technical and professional writing in professional contexts</li>
   </ul>
 </section>
 
-<!-- ✅ Skills Section -->
+<!-- ================= -->
+<!-- Skills Section -->
+<!-- ================= -->
 <section id="skills">
   <h2>Software Development Skills</h2>
   <div class="skills-grid">
@@ -113,107 +143,89 @@
         <li>Adaptability & Continuous Learning</li>
       </ul>
     </div>
-
-    <!-- ✅ Final Filler Card with Matched Dimensions -->
-   <!-- inside the skills-grid -->
-<div class="skill-category image-fill">
-  <img src="images/Technology visual.webp" alt="Technology visual" />
-  <p class="image-caption">
-    Cutting-edge technology drives innovation and progress, inspiring new solutions for a connected world.
-  </p>
-</div>
-
-
+  </div>
 </section>
 
-<!-- ✅ Gallery Section -->
-<section id="gallery">
-  <h2>Gallery</h2>
-
-  <h3>Clinical Experience</h3>
-  <div class="gallery" id="clinic-gallery">
-    <figure>
-      <img src="images/clinic1.jpg" alt="Reagan sitting next to a microscope" />
-      <figcaption>Sitting attentively next to a microscope, immersed in scientific research and discovery.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/clinic2.jpg" alt="Using the microscope" />
-      <figcaption>Analyzing samples under the microscope, demonstrating dedication to clinical excellence.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/clinic3.jpg" alt="Reagan with clinical team" />
-      <figcaption>Collaborating with my clinical team to ensure high standards of healthcare and accuracy.</figcaption>
-    </figure>
+<!-- ================= -->
+<!-- Projects Section -->
+<!-- ================= -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>Developed a full-stack web app with React and Node.js</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>Created a REST API integrated with MongoDB</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <p>Collaborated in a team to build a technology solution</p>
+      <a href="#">View Project</a>
+    </div>
   </div>
+</section>
 
-  <h3>Technology Projects</h3>
-  <div class="gallery" id="project-gallery">
-    <figure>
-      <img src="images/project1.jpg" alt="Reagan coding on the computer" />
-      <figcaption>Immersed in coding, developing innovative software solutions.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/project2.jpg" alt="Computer screen with code" />
-      <figcaption>Writing clean, scalable code powering future technologies.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/project3.jpg" alt="Reagan and team collaborating" />
-      <figcaption>Collaborating with a team to build creative, functional technology products.</figcaption>
-    </figure>
-  </div>
-
-  <p style="text-align: center; margin-top: 20px;">
-    <a href="https://github.com/REAGANOTEMA/Reagan-Otema" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-      <img src="images/git.jpeg" alt="GitHub Icon" style="width: 20px; height: 20px;" />
-      View My Full GitHub Repository for Technology Projects
+<!-- ================= -->
+<!-- Downloads Section -->
+<!-- ================= -->
+<section id="downloads">
+  <h2>Downloads</h2>
+  <div class="downloads-grid">
+    <a href="downloads/PathwayCertificate.pdf" class="download-card" download>
+      <i class="fa-solid fa-file-pdf"></i> Pathway Certificate
     </a>
-  </p>
+    <a href="downloads/CourseCertificate.pdf" class="download-card" download>
+      <i class="fa-solid fa-file-pdf"></i> Course Certificate
+    </a>
+    <a href="downloads/CV.pdf" class="download-card" download>
+      <i class="fa-solid fa-file-lines"></i> My CV
+    </a>
+    <a href="downloads/CoverLetter.pdf" class="download-card" download>
+      <i class="fa-solid fa-file-signature"></i> Cover Letter
+    </a>
+  </div>
 </section>
 
-<!-- ✅ Contact Section -->
+<!-- ================= -->
+<!-- Contact Section -->
+<!-- ================= -->
 <section id="contact">
   <h2>Contact Me</h2>
   <form action="https://formspree.io/f/xkgzglez" method="POST" class="contact-form">
-
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" required />
-
+    <input type="text" id="name" name="name" required/>
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" required />
-
+    <input type="email" id="email" name="email" required/>
     <label for="message">Message</label>
     <textarea id="message" name="message" rows="5" required></textarea>
-
     <button type="submit">Send Message</button>
   </form>
 </section>
 
-<!-- ✅ Footer -->
-<!-- ✅ Footer -->
+<!-- ================= -->
+<!-- Footer -->
+<!-- ================= -->
 <footer>
   <div class="footer-contact">
-    <a href="mailto:reaganotema2022@gmail.com"><img src="icons/email.png" alt="Email Icon" /></a>
-    <a href="https://www.linkedin.com/in/reagan-otema" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn Icon" /></a>
-    <a href="https://github.com/REAGANOTEMA/Reagan-Otema" target="_blank"><img src="icons/github.png" alt="GitHub Icon" /></a>
-    <a href="https://www.facebook.com/reagan.otema.2025"><img src="icons/facebook.png" alt="Facebook Icon" /></a>
-    <a href="https://orcid.org/0009-0003-2046-8006" target="_blank"><img src="icons/orcid.svg" alt="ORCID Icon" /></a>
-    <a href="tel:+256772514889"><img src="icons/call1.png" alt="Phone Icon" /></a>
-    <a href="tel:+25677514889"><img src="icons/whatsapp.png" alt="WhatsApp Icon" /></a>
+    <a href="mailto:reaganotema2022@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/reagan-otema" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://github.com/REAGANOTEMA/Reagan-Otema" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.facebook.com/reagan.otema.2025"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://orcid.org/0009-0003-2046-8006" target="_blank"><i class="fa-brands fa-orcid"></i></a>
+    <a href="tel:+256772514889"><i class="fa-solid fa-phone"></i></a>
+    <a href="https://wa.me/25677514889"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
   <p>&copy; 2025 Reagan Otema | Seeking Remote Tech Opportunities</p>
 </footer>
 
-
-<!-- ✅ JavaScript for Hamburger Menu -->
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-  hamburger.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-    const expanded = hamburger.getAttribute("aria-expanded") === "true";
-    hamburger.setAttribute("aria-expanded", !expanded);
-  });
-</script>
-
+<!-- ================= -->
+<!-- JS -->
+<!-- ================= -->
+<script src="script.js"></script>
 </body>
 </html>

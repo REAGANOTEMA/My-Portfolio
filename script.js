@@ -1,8 +1,10 @@
-// Final Responsive Portfolio JavaScript with animations preserved
+// ===============================
+// Final Responsive Portfolio JavaScript
+// With Rain, Thunder & Cartoon Character
+// ===============================
 
 /**
- * Animate header title with subtle 3D scale on load
- * and add slight tilt effect on hover.
+ * Animate header title with subtle 3D scale and tilt.
  */
 window.addEventListener('DOMContentLoaded', () => {
   const siteTitle = document.getElementById('site-title');
@@ -19,7 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   siteTitle.addEventListener('mouseenter', () => {
     siteTitle.style.transition = 'transform 0.3s ease';
-    siteTitle.style.transform = 'perspective(500px) rotateX(5deg) rotateY(10deg) scale3d(1.1, 1.1, 1.1)';
+    siteTitle.style.transform =
+      'perspective(500px) rotateX(5deg) rotateY(10deg) scale3d(1.1, 1.1, 1.1)';
   });
 
   siteTitle.addEventListener('mouseleave', () => {
@@ -31,13 +34,12 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Gallery 3D hover effect:
- * Subtle rotation and scaling on mouse move.
+ * Gallery 3D hover effect.
  */
 window.addEventListener('DOMContentLoaded', () => {
   const galleryFigures = document.querySelectorAll('.gallery figure');
 
-  galleryFigures.forEach(figure => {
+  galleryFigures.forEach((figure) => {
     figure.style.transition = 'transform 0.35s ease, box-shadow 0.35s ease';
 
     figure.addEventListener('mouseenter', () => {
@@ -79,4 +81,86 @@ window.addEventListener('DOMContentLoaded', () => {
     navLinks.classList.toggle('active');
     hamburger.classList.toggle('active');
   });
+});
+
+/**
+ * Rain + Thunder Effect
+ */
+window.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('rain-canvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  // Raindrop class
+  class Raindrop {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.length = Math.random() * 20 + 10;
+      this.speed = Math.random() * 4 + 4;
+    }
+
+    fall() {
+      this.y += this.speed;
+      if (this.y > height) {
+        this.y = -this.length;
+        this.x = Math.random() * width;
+      }
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.x, this.y + this.length);
+      ctx.strokeStyle = 'rgba(30, 144, 255, 0.8)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+  }
+
+  const raindrops = [];
+  for (let i = 0; i < 180; i++) {
+    raindrops.push(new Raindrop());
+  }
+
+  function animateRain() {
+    ctx.clearRect(0, 0, width, height);
+    raindrops.forEach((drop) => {
+      drop.fall();
+      drop.draw();
+    });
+    requestAnimationFrame(animateRain);
+  }
+  animateRain();
+
+  // Thunder effect every 4s
+  setInterval(() => {
+    document.body.classList.add('flash');
+    setTimeout(() => {
+      document.body.classList.remove('flash');
+    }, 150);
+  }, 4000);
+});
+
+/**
+ * Cartoon character pointer movement
+ */
+window.addEventListener('DOMContentLoaded', () => {
+  const character = document.getElementById('cartoon-character');
+  if (!character) return;
+
+  // Re-trigger animation every 3 seconds to keep looping from start
+  setInterval(() => {
+    character.style.animation = 'none';
+    void character.offsetWidth; // trigger reflow
+    character.style.animation = 'moveCharacter 18s linear forwards';
+  }, 3000);
 });
