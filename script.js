@@ -1,5 +1,5 @@
 // ===============================
-// CLEAN 3D "CITY OF GOD" UNIVERSE JS
+// FINAL CLEAN 3D "CITY OF GOD" BACKGROUND + UX
 // ===============================
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.x = Math.random() * width - width / 2;
       this.y = Math.random() * height - height / 2;
       this.z = Math.random() * 800 - 400;
-      this.size = Math.random() * 2 + 1; // smaller, subtle
+      this.size = Math.random() * 2 + 1;
     }
     project() {
       const scale = 800 / (800 + this.z);
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     move() { this.z -= 1.2; if (this.z < -400) this.z = 400; }
   }
-  const nodes = Array.from({ length: 200 }, () => new Node()); // fewer for clean look
+  const nodes = Array.from({ length: 200 }, () => new Node());
 
   // ===== 3D Symbols (Subtle Scripts) =====
   class Symbol3D {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.y = Math.random() * height - height / 2;
       this.z = Math.random() * 800 - 400;
       this.char = ['{', '}', '<', '>', '/', ';', '=', '+'][Math.floor(Math.random() * 8)];
-      this.color = 'rgba(255, 223, 0, 0.5)'; // toned down
+      this.color = 'rgba(255,223,0,0.5)';
     }
     project() {
       const scale = 800 / (800 + this.z);
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const symbols = Array.from({ length: 60 }, () => new Symbol3D());
 
-  // ===== Stars (Soft Twinkle) =====
+  // ===== Stars =====
   const stars = Array.from({ length: 150 }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
@@ -58,87 +58,64 @@ document.addEventListener('DOMContentLoaded', () => {
     alpha: Math.random() * 0.8
   }));
 
-  // ===== Beams (Soft City Glows) =====
+  // ===== Beams =====
   const beams = Array.from({ length: 6 }, () => ({
     x: Math.random() * width,
     y: 0,
     length: 200 + Math.random() * 150,
     width: 1 + Math.random(),
-    alpha: 0.03 + Math.random() * 0.05 // subtle
+    alpha: 0.03 + Math.random() * 0.05
   }));
 
-  // ===== Orbs (Gentle Floating Lights) =====
+  // ===== Orbs =====
   const orbs = Array.from({ length: 10 }, () => {
     const orb = document.createElement('div');
     const size = 15 + Math.random() * 20;
-    orb.style.cssText = `position:fixed;width:${size}px;height:${size}px;border-radius:50%;background:rgba(255,223,0,0.1);left:${Math.random() * width}px;top:${Math.random() * height}px;pointer-events:none;z-index:50`;
+    orb.style.cssText = `position:fixed;width:${size}px;height:${size}px;border-radius:50%;background:rgba(255,223,0,0.1);left:${Math.random() * width}px;top:${Math.random() * height}px;pointer-events:none;z-index:0`;
     document.body.appendChild(orb);
     return { el: orb, dx: (Math.random() - 0.5) / 3, dy: (Math.random() - 0.5) / 3 };
   });
 
-  // ===== Particles (Subtle Cosmic Dust) =====
+  // ===== Particles =====
   const particles = Array.from({ length: 40 }, () => {
     const p = document.createElement('div');
     const col = 200 + Math.floor(Math.random() * 55);
-    p.style.cssText = `position:fixed;width:3px;height:3px;border-radius:50%;background:rgba(255,${col},0,0.1);left:${Math.random() * width}px;top:${Math.random() * height}px;pointer-events:none;z-index:40`;
+    p.style.cssText = `position:fixed;width:3px;height:3px;border-radius:50%;background:rgba(255,${col},0,0.1);left:${Math.random() * width}px;top:${Math.random() * height}px;pointer-events:none;z-index:0`;
     document.body.appendChild(p);
     return { el: p, dx: (Math.random() - 0.5) / 2, dy: (Math.random() - 0.5) / 2 };
   });
 
-  // ===== Cursor Trail =====
-  const sparkleContainer = document.createElement('div');
-  sparkleContainer.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2000';
-  document.body.appendChild(sparkleContainer);
+  // ===== UX: Cursor Glow =====
+  const uxContainer = document.createElement('div');
+  uxContainer.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1';
+  document.body.appendChild(uxContainer);
 
   document.addEventListener('mousemove', e => {
-    const dot = document.createElement('div');
-    const trailSize = 3 + Math.random() * 3;
-    dot.style.cssText = `position:fixed;width:${trailSize}px;height:${trailSize}px;border-radius:50%;background:rgba(255,255,200,0.4);left:${e.clientX}px;top:${e.clientY}px;pointer-events:none;z-index:2000`;
-    sparkleContainer.appendChild(dot);
-    setTimeout(() => dot.remove(), 600);
+    const glow = document.createElement('div');
+    const size = 10 + Math.random() * 10;
+    glow.style.cssText = `position:fixed;width:${size}px;height:${size}px;border-radius:50%;background:rgba(255,255,150,0.3);left:${e.clientX - size / 2}px;top:${e.clientY - size / 2}px;pointer-events:none;z-index:1;transition:0.2s`;
+    uxContainer.appendChild(glow);
+    setTimeout(() => glow.remove(), 400);
   });
 
-  // ===== Hamburger Menu =====
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
+  // ===== UX: Section Highlight on Hover =====
+  document.querySelectorAll('section, article, div.content').forEach(el => {
+    el.style.transition = 'box-shadow 0.3s ease, transform 0.3s ease';
+    el.addEventListener('mouseenter', () => {
+      el.style.boxShadow = '0 0 40px rgba(255,223,0,0.3)';
+      el.style.transform = 'scale(1.02)';
     });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-      });
+    el.addEventListener('mouseleave', () => {
+      el.style.boxShadow = 'none';
+      el.style.transform = 'scale(1)';
     });
-    window.addEventListener('popstate', () => {
-      navLinks.classList.remove('active');
-      hamburger.classList.remove('active');
-    });
-  }
-
-  // ===== Minimal Energy Bursts =====
-  setInterval(() => {
-    const burst = document.createElement('div');
-    const size = 8 + Math.random() * 15;
-    burst.style.cssText = `position:fixed;width:${size}px;height:${size}px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,150,0.3) 0%,rgba(255,223,0,0) 80%);left:${Math.random() * width}px;top:${Math.random() * height}px;pointer-events:none;z-index:50`;
-    document.body.appendChild(burst);
-    let scale = 1;
-    (function expand() {
-      scale += 0.03;
-      burst.style.transform = `scale(${scale})`;
-      burst.style.opacity = 1 - scale / 5;
-      if (scale < 5) requestAnimationFrame(expand);
-      else burst.remove();
-    })();
-  }, 1500);
+  });
 
   // ===== Main Animation Loop =====
   let angle = 0;
   function animate() {
     ctx.clearRect(0, 0, width, height);
-    angle += 0.0003;
+    angle += 0.0005;
 
     // stars
     stars.forEach(s => {
@@ -147,11 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.beginPath();
       ctx.arc(x, y, s.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
-      ctx.shadowBlur = 0;
       ctx.fill();
       s.alpha += (Math.random() - 0.5) * 0.01;
-      if (s.alpha > 0.8) s.alpha = 0.8;
-      if (s.alpha < 0.2) s.alpha = 0.2;
+      s.alpha = Math.min(Math.max(s.alpha, 0.2), 0.8);
     });
 
     // nodes & lines
@@ -168,8 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const b = nodes[j].project();
         const bxRot = Math.cos(angle) * (b.x - width / 2) - Math.sin(angle) * (b.y - height / 2) + width / 2;
         const byRot = Math.sin(angle) * (b.x - width / 2) + Math.cos(angle) * (b.y - height / 2) + height / 2;
-        const dist = Math.hypot(xRot - bxRot, yRot - byRot);
-        if (dist < 100) {
+        if (Math.hypot(xRot - bxRot, yRot - byRot) < 100) {
           ctx.beginPath();
           ctx.moveTo(xRot, yRot);
           ctx.lineTo(bxRot, byRot);
