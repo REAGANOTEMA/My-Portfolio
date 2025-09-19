@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,222 +12,294 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- ================= -->
-<!-- Rain Canvas Layer -->
-<!-- ================= -->
-<canvas id="rain-canvas"></canvas>
-<canvas id="flower-canvas"></canvas>
+  <!-- ================= -->
+  <!-- Rain Canvas Layer -->
+  <!-- ================= -->
+  <canvas id="rain-canvas"></canvas>
+  <canvas id="flower-canvas"></canvas>
 
-<!-- ================= -->
-<!-- Cartoon Character -->
-<!-- ================= -->
-<div id="cartoon-character">
-  <img src="https://cdn-icons-png.flaticon.com/512/528/528098.png" alt="Cartoon Character" />
-</div>
+  <!-- ================= -->
+  <!-- Cartoon Character -->
+  <!-- ================= -->
+  <div id="cartoon-character">
+    <img src="https://cdn-icons-png.flaticon.com/512/528/528098.png" alt="Cartoon Character" />
+  </div>
 
-<!-- ================= -->
-<!-- Navbar -->
-<!-- ================= -->
-<nav class="navbar">
-  <div class="nav-container">
-    <h1 id="site-title">
-      <span class="highlight">REAGAN</span> <span class="accent">OTEMA</span>
-    </h1>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#downloads">Downloads</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <!-- ================= -->
+  <!-- Navbar -->
+  <!-- ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 id="site-title">
+        <span class="highlight">REAGAN</span> <span class="accent">OTEMA</span>
+      </h1>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================= -->
+  <!-- Header -->
+  <!-- ================= -->
+  <header>
+    <p class="tagline">⚡ Passionate Tech Enthusiast & Remote Job Seeker | Based in Uganda ⚡</p>
+  </header>
+
+  <!-- ================= -->
+  <!-- About Section -->
+  <!-- ================= -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="profile">
+      <img src="images/profile.jpg" alt="Reagan Otema" class="profile-img" />
+      <p>
+        I'm <strong>Reagan Otema</strong>, a dedicated technology professional based in Uganda.
+        I studied at <strong>Brigham Young University - Idaho (2024-2027)</strong> focusing on tech innovation,
+        programming, and teamwork.
+        I also gained international exposure at <strong>Tel Aviv University, Israel</strong>.
+        My clinical background enhanced my analytical skills, but my passion is technology.
+        I have learned programming with <strong>Data Structures</strong>, <strong>Web Frontend Development
+          (WDD231)</strong>, and <strong>Professional Writing</strong> in technical and professional contexts.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= -->
+  <!-- Experience Section -->
+  <!-- ================= -->
+  <section id="experience">
+    <h2>Experience & Education</h2>
+    <ul>
+      <li><strong>Brigham Young University - Idaho</strong><br>Tech-focused studies (2024-2027)</li>
+      <li><strong>Tel Aviv University</strong><br>Clinical Pathology with collaborative projects</li>
+      <li><strong>Clinical Work</strong><br>Critical observational and detail-oriented skills</li>
+      <li><strong>Technology Projects</strong><br>Hands-on coding, development, and project management</li>
+      <li><strong>Data Structures & Web Development</strong><br>Programming with complex data structures, WDD231, and
+        front-end skills</li>
+      <li><strong>Professional Writing</strong><br>Technical and professional writing in professional contexts</li>
     </ul>
-  </div>
-</nav>
+  </section>
 
-<!-- ================= -->
-<!-- Header -->
-<!-- ================= -->
-<header>
-  <p class="tagline">⚡ Passionate Tech Enthusiast & Remote Job Seeker | Based in Uganda ⚡</p>
-</header>
+  <!-- ================= -->
+  <!-- Skills Section -->
+  <!-- ================= -->
+  <section id="skills">
+    <h2>Software Development Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>🛠️ Languages</h3>
+        <ul>
+          <li>JavaScript (ES6+)</li>
+          <li>Python</li>
+          <li>HTML5 & CSS3</li>
+          <li>SQL & NoSQL</li>
+          <li>C++ (Basics)</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>🧰 Tools & Frameworks</h3>
+        <ul>
+          <li>React.js</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>Bootstrap & Tailwind</li>
+          <li>Git & GitHub</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>📦 Databases & APIs</h3>
+        <ul>
+          <li>MongoDB</li>
+          <li>MySQL</li>
+          <li>RESTful APIs</li>
+          <li>Postman</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>🌐 Deployment & Platforms</h3>
+        <ul>
+          <li>GitHub Pages</li>
+          <li>Netlify</li>
+          <li>Heroku</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>🧠 Soft Skills</h3>
+        <ul>
+          <li>Problem-Solving</li>
+          <li>Remote Team Collaboration</li>
+          <li>Agile & Scrum</li>
+          <li>Technical Writing</li>
+          <li>Adaptability & Continuous Learning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<!-- ================= -->
-<!-- About Section -->
-<!-- ================= -->
-<section id="about">
-  <h2>About Me</h2>
-  <div class="profile">
-    <img src="images/profile.jpg" alt="Reagan Otema" class="profile-img"/>
-    <p>
-      I'm <strong>Reagan Otema</strong>, a dedicated technology professional based in Uganda.  
-      I studied at <strong>Brigham Young University - Idaho (2024-2027)</strong> focusing on tech innovation, programming, and teamwork.  
-      I also gained international exposure at <strong>Tel Aviv University, Israel</strong>.  
-      My clinical background enhanced my analytical skills, but my passion is technology.  
-      I have learned programming with <strong>Data Structures</strong>, <strong>Web Frontend Development (WDD231)</strong>, and <strong>Professional Writing</strong> in technical and professional contexts.
+  <!-- ================= -->
+  <!-- Projects Section -->
+  <!-- ================= -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Developed a full-stack web app with React and Node.js</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Created a REST API integrated with MongoDB</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>Collaborated in a team to build a technology solution</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= -->
+  <!-- Gallery Section -->
+  <!-- ================= -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p class="gallery-intro">
+      A collection of moments that shaped both my academic journey in <strong>Israel</strong>
+      and my growth as a <strong>software developer</strong>. Each picture represents a step forward
+      in learning, collaboration, and building technology with purpose.
     </p>
-  </div>
-</section>
+    <div class="gallery-grid">
+      <!-- Israel Images -->
+      <div class="gallery-item animate">
+        <img src="images/me_microscope2.jpg" alt="Reagan with Microscope in Israel">
+        <p>At Tel Aviv University, I worked with the microscope, learning focus, patience, and attention to detail.
+          These qualities later shaped my approach to coding, where precision and problem-solving are essential in
+          writing efficient, bug-free programs that truly solve user needs.</p>
+      </div>
+      <div class="gallery-item animate">
+        <img src="images/drs_group1.jpg" alt="Reagan with Fellow Doctors in Israel">
+        <p>Collaborating with fellow doctors and researchers in Israel taught me the true value of teamwork and
+          communication. Those lessons continue to guide my work in software development, where cross-functional
+          collaboration ensures building meaningful and impactful digital solutions that truly help people.</p>
+      </div>
+      <div class="gallery-item animate">
+        <img src="images/dr_group2.jpg" alt="Study Session in Israel">
+        <p>Research sessions in Israel challenged me to embrace resilience, structure, and critical thinking. These
+          experiences strengthened my mindset as a developer, enabling me to design logical systems, debug effectively,
+          and write sustainable code that delivers long-term value to projects and users.</p>
+      </div>
+      <div class="gallery-item animate">
+        <img src="images/Debugging.jpg" alt="Debugging and UI Design">
+        <p>Debugging and refining UI/UX designs allows me to combine logic with creativity. By testing and enhancing
+          usability, I make sure that the solutions I build are not only technically sound but also intuitive,
+          efficient, and enjoyable for users across different devices.</p>
+      </div>
 
-<!-- ================= -->
-<!-- Experience Section -->
-<!-- ================= -->
-<section id="experience">
-  <h2>Experience & Education</h2>
-  <ul>
-    <li><strong>Brigham Young University - Idaho</strong><br>Tech-focused studies (2024-2027)</li>
-    <li><strong>Tel Aviv University</strong><br>Clinical Pathology with collaborative projects</li>
-    <li><strong>Clinical Work</strong><br>Critical observational and detail-oriented skills</li>
-    <li><strong>Technology Projects</strong><br>Hands-on coding, development, and project management</li>
-    <li><strong>Data Structures & Web Development</strong><br>Programming with complex data structures, WDD231, and front-end skills</li>
-    <li><strong>Professional Writing</strong><br>Technical and professional writing in professional contexts</li>
-  </ul>
-</section>
+      <!-- Project Images -->
+      <div class="gallery-item animate">
+        <img src="images/project1.jpg" alt="Clean Code Display on Screen">
+        <p>Writing clean, structured, and well-documented code is central to my practice as a developer. Beyond
+          functionality, I focus on readability and scalability, ensuring that every piece of code I write contributes
+          to sustainable growth and can be easily maintained by any developer.</p>
+      </div>
 
-<!-- ================= -->
-<!-- Skills Section -->
-<!-- ================= -->
-<section id="skills">
-  <h2>Software Development Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-category">
-      <h3>🛠️ Languages</h3>
-      <ul>
-        <li>JavaScript (ES6+)</li>
-        <li>Python</li>
-        <li>HTML5 & CSS3</li>
-        <li>SQL & NoSQL</li>
-        <li>C++ (Basics)</li>
-      </ul>
+      <div class="gallery-item animate">
+        <img src="images/software_team1.jpg" alt="Team Project Collaboration">
+        <p>Collaborating on team projects highlights the importance of Agile principles and collective problem-solving.
+          I thrive in environments where teamwork drives innovation, and I continuously aim to build impactful software
+          that reflects shared effort, technical expertise, and the ability to adapt to change.</p>
+      </div>
     </div>
-    <div class="skill-category">
-      <h3>🧰 Tools & Frameworks</h3>
-      <ul>
-        <li>React.js</li>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>Bootstrap & Tailwind</li>
-        <li>Git & GitHub</li>
-      </ul>
-    </div>
-    <div class="skill-category">
-      <h3>📦 Databases & APIs</h3>
-      <ul>
-        <li>MongoDB</li>
-        <li>MySQL</li>
-        <li>RESTful APIs</li>
-        <li>Postman</li>
-        <li>Firebase</li>
-      </ul>
-    </div>
-    <div class="skill-category">
-      <h3>🌐 Deployment & Platforms</h3>
-      <ul>
-        <li>GitHub Pages</li>
-        <li>Netlify</li>
-        <li>Heroku</li>
-        <li>VS Code</li>
-      </ul>
-    </div>
-    <div class="skill-category">
-      <h3>🧠 Soft Skills</h3>
-      <ul>
-        <li>Problem-Solving</li>
-        <li>Remote Team Collaboration</li>
-        <li>Agile & Scrum</li>
-        <li>Technical Writing</li>
-        <li>Adaptability & Continuous Learning</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
-<!-- ================= -->
-<!-- Projects Section -->
-<!-- ================= -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>Project 1</h3>
-      <p>Developed a full-stack web app with React and Node.js</p>
-      <a href="#">View Project</a>
+  </section>
+
+  <!-- ================= -->
+  <!-- Downloads Section -->
+  <!-- ================= -->
+  <section id="downloads">
+    <h2>Downloads</h2>
+    <p class="downloads-intro">
+      My certificates highlight academic achievement and technical growth.
+      They represent the skills, discipline, and commitment that continue to drive my journey as a developer.
+    </p>
+    <div class="downloads-grid">
+      <div class="download-card">
+        <i class="fa-solid fa-file-pdf"></i>
+        <h3>PathwayConnect Certificate</h3>
+        <p>
+          Awarded for successfully completing BYU-PathwayConnect.
+          This milestone prepared me for higher education while strengthening
+          my confidence, academic readiness, and professional communication.
+        </p>
+        <a href="documents/eDiploma for Reagan Otema.pdf" download>Download PDF</a>
+      </div>
+      <div class="download-card">
+        <i class="fa-solid fa-file-pdf"></i>
+        <h3>Course Certificate</h3>
+        <p>
+          Recognition of my progress in core technology courses,
+          including programming, web development, and data structures.
+          Each course built a stronger foundation for my career in software engineering.
+        </p>
+        <a href="documents/transcript .pdf" download>Download PDF</a>
+      </div>
     </div>
-    <div class="project-card">
-      <h3>Project 2</h3>
-      <p>Created a REST API integrated with MongoDB</p>
-      <a href="#">View Project</a>
+  </section>
+
+  <!-- ================= -->
+  <!-- Contact Section -->
+  <!-- ================= -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/xkgzglez" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ================= -->
+  <!-- Footer -->
+  <!-- ================= -->
+  <footer>
+    <div class="footer-contact">
+      <a href="mailto:reaganotema2022@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/reagan-otema" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/REAGANOTEMA/Reagan-Otema" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.facebook.com/reagan.otema.2025"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://orcid.org/0009-0003-2046-8006" target="_blank"><i class="fa-brands fa-orcid"></i></a>
+      <a href="tel:+256772514889"><i class="fa-solid fa-phone"></i></a>
+      <a href="https://wa.me/25677514889"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
-    <div class="project-card">
-      <h3>Project 3</h3>
-      <p>Collaborated in a team to build a technology solution</p>
-      <a href="#">View Project</a>
-    </div>
-  </div>
-</section>
+    <p>&copy; 2025 Reagan Otema | Seeking Remote Tech Opportunities</p>
+  </footer>
 
-<!-- ================= -->
-<!-- Downloads Section -->
-<!-- ================= -->
-<section id="downloads">
-  <h2>Downloads</h2>
-  <div class="downloads-grid">
-    <a href="documents/eDiploma for Reagan Otema.pdf" class="download-card" download>
-      <i class="fa-solid fa-file-pdf"></i> Pathway Certificate
-    </a>
-    <a href="documents/transcript .pdf" class="download-card" download>
-      <i class="fa-solid fa-file-pdf"></i> Course Certificate
-    </a>
-    <a href="documents/Reagan Otem Resume Webstar.pdf" class="download-card" download>
-      <i class="fa-solid fa-file-lines"></i> My CV
-    </a>
-    <a href="documents/Reagan Otema Cover letter Webstar.pdf" class="download-card" download>
-      <i class="fa-solid fa-file-signature"></i> Cover Letter
-    </a>
-  </div>
-</section>
-
-<!-- ================= -->
-<!-- Contact Section -->
-<!-- ================= -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/xkgzglez" method="POST" class="contact-form">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required/>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required/>
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<!-- ================= -->
-<!-- Footer -->
-<!-- ================= -->
-<footer>
-  <div class="footer-contact">
-    <a href="mailto:reaganotema2022@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/reagan-otema" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://github.com/REAGANOTEMA/Reagan-Otema" target="_blank"><i class="fa-brands fa-github"></i></a>
-    <a href="https://www.facebook.com/reagan.otema.2025"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://orcid.org/0009-0003-2046-8006" target="_blank"><i class="fa-brands fa-orcid"></i></a>
-    <a href="tel:+256772514889"><i class="fa-solid fa-phone"></i></a>
-    <a href="https://wa.me/25677514889"><i class="fa-brands fa-whatsapp"></i></a>
-  </div>
-  <p>&copy; 2025 Reagan Otema | Seeking Remote Tech Opportunities</p>
-</footer>
-
-<!-- ================= -->
-<!-- JS -->
-<!-- ================= -->
-<script src="script.js"></script>
+  <!-- ================= -->
+  <!-- JS -->
+  <!-- ================= -->
+  <script src="script.js"></script>
 </body>
+
 </html>
