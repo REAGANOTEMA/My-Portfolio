@@ -942,3 +942,93 @@ header::before {
   transform: rotate(-20deg);
   /* other arm */
 }
+/* ===============================
+   Professional Executive Avatar
+   (Overrides Cartoon Character)
+   =============================== */
+
+#cartoon-character {
+  position: fixed !important;
+  right: 40px !important;
+  bottom: 40px !important;
+  left: auto !important;
+  top: auto !important;
+
+  width: 90px !important;
+  height: 90px !important;
+
+  border-radius: 50% !important;
+  overflow: hidden !important;
+
+  background: radial-gradient(
+    circle at top,
+    #ffffff 0%,
+    #f0f0f0 40%,
+    #dcdcdc 100%
+  ) !important;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 2px rgba(255, 215, 0, 0.45),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.15) !important;
+
+  z-index: 2000 !important;
+  pointer-events: none !important;
+
+  animation: executiveFloat 7s ease-in-out infinite !important;
+}
+
+/* Image inside avatar */
+#cartoon-character img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  animation: none !important;
+}
+
+/* Remove old pseudo-elements (arms, head, etc.) */
+#cartoon-character::before,
+#cartoon-character::after {
+  display: none !important;
+}
+
+/* ===============================
+   Subtle Luxury Motion
+   =============================== */
+@keyframes executiveFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   Soft Golden Aura (Optional Glow)
+   =============================== */
+#cartoon-character::marker {
+  display: none;
+}
+
+#cartoon-character {
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.25));
+}
+
+/* ===============================
+   Mobile Adjustment
+   =============================== */
+@media (max-width: 768px) {
+  #cartoon-character {
+    width: 70px !important;
+    height: 70px !important;
+    right: 20px !important;
+    bottom: 20px !important;
+  }
+}

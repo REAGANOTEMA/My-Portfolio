@@ -205,3 +205,34 @@ document.addEventListener('DOMContentLoaded', () => {
   animate();
 
 });
+  // ===== Luxury Professional Avatar (Auto Image) =====
+  const avatar = document.createElement('img');
+  avatar.src = 'https://api.dicebear.com/7.x/personas/png?seed=executive&backgroundColor=f5f5f5';
+  avatar.alt = 'Professional Avatar';
+
+  avatar.style.cssText = `
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35),
+                inset 0 0 0 2px rgba(255,223,0,0.4);
+    background: radial-gradient(circle at top, #fff, #eaeaea);
+    animation: avatarFloat 6s ease-in-out infinite;
+    pointer-events: none;
+  `;
+  document.body.appendChild(avatar);
+
+  // ===== Avatar Float Animation =====
+  const avatarStyle = document.createElement('style');
+  avatarStyle.innerHTML = `
+    @keyframes avatarFloat {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+  `;
+  document.head.appendChild(avatarStyle);
