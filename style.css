@@ -438,65 +438,46 @@ section:hover {
 
   .gallery-item p { font-size: 0.9rem !important; }
 }
-/* ================= Avatar Center & Professional ================= */
+/* ================= Fix Avatar Overlap ================= */
 #cartoon-character {
-  position: absolute !important;       /* top-center placement */
-  top: 20px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important; /* center horizontally */
-  width: 120px !important;             /* professional size */
-  height: 120px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  background: radial-gradient(circle at top, #ffffff 0%, #f0f0f0 40%, #dcdcdc 100%) !important;
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.35),
-    inset 0 0 0 2px rgba(255,215,0,0.45),
-    inset 0 -6px 12px rgba(0,0,0,0.15) !important;
+  position: fixed !important;       /* keep it floating, not blocking content */
+  top: auto !important;             /* let it sit at bottom-right */
+  bottom: 40px !important;
+  left: auto !important;
+  right: 40px !important;
+  transform: none !important;       /* no translateX */
+  width: 100px !important;
+  height: 100px !important;
   z-index: 2000 !important;
-  pointer-events: none !important;
-  filter: drop-shadow(0 0 12px rgba(255,215,0,0.25));
-  animation: executiveFloat 7s ease-in-out infinite !important;
-}
-
-#cartoon-character img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  animation: none !important;
-}
-
-@keyframes executiveFloat {
-  0%   { transform: translateX(-50%) translateY(0); }
-  50%  { transform: translateX(-50%) translateY(-12px); }
-  100% { transform: translateX(-50%) translateY(0); }
 }
 
 /* Mobile adjustments for avatar */
 @media (max-width: 768px) {
   #cartoon-character {
-    width: 90px !important;
-    height: 90px !important;
-    top: 15px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    width: 70px !important;
+    height: 70px !important;
+    right: 20px !important;
+    bottom: 20px !important;
   }
 }
 
-/* ================= Header Top Padding ================= */
-header {
-  padding: 6rem 1rem 2rem !important; /* extra top padding to avoid overlap with avatar */
+/* Optional: Add gentle glow around avatar */
+#cartoon-character::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px rgba(255, 215, 0, 0.3);
+  animation: glowPulse 3s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* ================= Footer ================= */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #fff0f0;
-  border-top: 3px solid #b22222;
-  box-shadow: 0 -6px 12px rgba(178,34,34,0.1);
-  font-weight: 500;
-  color: #4b2e05;
-  margin-top: auto; /* sticks footer to bottom */
+@keyframes glowPulse {
+  0%   { box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.2); }
+  50%  { box-shadow: 0 0 30px 15px rgba(255, 215, 0, 0.4); }
+  100% { box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.2); }
 }
