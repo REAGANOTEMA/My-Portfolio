@@ -1,7 +1,7 @@
 /* ===============================
-   Final Responsive Portfolio CSS
-   With Rain, Thunder & Cartoon Character
-   Upgraded for Pro Design
+   FINAL RESPONSIVE PORTFOLIO CSS
+   Fully Merged & Clean
+   Includes: Background, Rain, Sparkles, Avatar, Header, Navbar, Sections, Grids, Gallery, Lightbox
    =============================== */
 
 /* Reset and base styles */
@@ -39,20 +39,9 @@ body::before {
 }
 
 @keyframes bgPulse {
-  0% {
-    opacity: 0.12;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.18;
-    transform: scale(1.02);
-  }
-
-  100% {
-    opacity: 0.12;
-    transform: scale(1);
-  }
+  0% { opacity: 0.12; transform: scale(1); }
+  50% { opacity: 0.18; transform: scale(1.02); }
+  100% { opacity: 0.12; transform: scale(1); }
 }
 
 /* ================= Rain & Thunder ================= */
@@ -71,266 +60,122 @@ body.flash {
   transition: background 0.2s ease;
 }
 
-/* ================= Cartoon Character ================= */
-#cartoon-character {
+/* ================= Flower Rain ================= */
+#flower-canvas {
   position: fixed;
-  bottom: 20px;
-  left: -120px;
-  width: 90px;
-  height: auto;
-  z-index: 2000;
-  animation: moveCharacter 18s linear infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ================= Magical Sparkles ================= */
+#sparkle-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1500;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff9c4 0%, #ffe57f 80%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkleAnim 4s linear infinite;
+}
+
+@keyframes sparkleAnim {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateY(-200px) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-400px) scale(0.5); opacity: 0; }
+}
+
+/* ================= Cartoon Character / Executive Avatar ================= */
+#cartoon-character {
+  position: fixed !important;
+  right: 40px !important;
+  bottom: 40px !important;
+  width: 90px !important;
+  height: 90px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: radial-gradient(circle at top, #ffffff 0%, #f0f0f0 40%, #dcdcdc 100%) !important;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 2px rgba(255, 215, 0, 0.45),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.15) !important;
+  z-index: 2000 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.25));
+  animation: executiveFloat 7s ease-in-out infinite !important;
 }
 
 #cartoon-character img {
-  width: 100%;
-  height: auto;
-  animation: point 1.2s infinite alternate;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  animation: none !important;
 }
 
-@keyframes moveCharacter {
-  0% {
-    left: -120px;
-    top: 5%;
-  }
-
-  20% {
-    left: 15%;
-    top: 20%;
-  }
-
-  40% {
-    left: 40%;
-    top: 45%;
-  }
-
-  60% {
-    left: 65%;
-    top: 70%;
-  }
-
-  80% {
-    left: 85%;
-    top: 40%;
-  }
-
-  100% {
-    left: 110%;
-    top: 10%;
-  }
+#cartoon-character::before,
+#cartoon-character::after,
+#cartoon-character::marker {
+  display: none !important;
 }
 
-@keyframes point {
-  from {
-    transform: rotate(-12deg);
-  }
+@keyframes executiveFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
 
-  to {
-    transform: rotate(12deg);
+/* Mobile Adjustments for Avatar */
+@media (max-width: 768px) {
+  #cartoon-character {
+    width: 70px !important;
+    height: 70px !important;
+    right: 20px !important;
+    bottom: 20px !important;
   }
 }
 
 /* ================= Header ================= */
 header {
   text-align: center;
-  padding: 3rem 1rem 2rem;
-  background: linear-gradient(135deg, #8b0000, #b22222, #ff4500);
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  border-bottom: 3px solid #800000;
+  padding: 2rem 1rem !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
   position: relative;
   z-index: 2;
-  overflow: hidden;
 }
 
 #site-title {
-  font-size: 3.5rem;
+  font-size: 3rem !important;
   font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  display: inline-block;
-  padding: 0.6rem 1.4rem;
-  color: #fff;
-  background: linear-gradient(90deg, #d32f2f, #b71c1c, #ff6347);
-  border-radius: 16px;
-  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4),
-    4px 6px 12px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.5s ease;
-  perspective: 1000px;
-  animation: glowText 3s ease-in-out infinite alternate;
-}
-
-#site-title:hover {
-  transform: rotateX(8deg) rotateY(-8deg) scale(1.12);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
-  background: linear-gradient(90deg, #d32f2f, #ff4500, #8b0000);
-}
-
-@keyframes glowText {
-  0% {
-    text-shadow: 0 0 8px #ff6347, 0 0 15px #ff4500;
-  }
-
-  100% {
-    text-shadow: 0 0 16px #ff4500, 0 0 25px #d32f2f;
-  }
+  letter-spacing: normal !important;
+  color: #b22222 !important;
+  text-shadow: none !important;
+  padding: 0 !important;
+  transform: none !important;
+  animation: none !important;
 }
 
 header p {
-  margin-top: 0.7rem;
-  font-weight: 500;
-  font-size: 1.25rem;
-  color: #ffe4e1;
-  font-style: italic;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-  animation: fadeInUp 1.2s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= Sections ================= */
-section {
-  max-width: 960px;
-  width: 90%;
-  margin: 2rem auto 3rem;
-  background-color: #fff;
-  padding: 2.5rem 3rem;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  z-index: 2;
-}
-
-section:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.15);
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.2rem;
-  color: #b22222;
-  border-bottom: 4px solid #ff6347;
-  padding-bottom: 0.4rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-h3 {
-  color: #4b2e05;
-  margin-top: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* ================= Lists ================= */
-#experience ul,
-.skills-grid ul {
-  list-style-type: disc;
-  padding-left: 1.7rem;
-  color: #4b3b2b;
-  font-size: 1.15rem;
-  font-weight: 500;
-}
-
-#experience li {
-  margin-bottom: 1.2rem;
-  position: relative;
-}
-
-#experience li::before {
-  content: "★";
-  position: absolute;
-  left: -1.2rem;
-  color: #ff6347;
-  font-size: 1rem;
-}
-
-/* ================= Contact ================= */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.9rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 1.05rem;
-  resize: none;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #b22222;
-  box-shadow: 0 0 10px rgba(178, 34, 34, 0.4);
-  outline: none;
-}
-
-.contact-form button {
-  padding: 0.9rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  background: #b22222;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #ff6347;
-  transform: scale(1.08);
-  box-shadow: 0 6px 16px rgba(178, 34, 34, 0.4);
-}
-
-/* ================= Footer ================= */
-footer {
-  background-color: #1b1b1b;
-  text-align: center;
-  padding: 2.2rem 1rem;
-  color: #fff;
-  font-weight: 600;
-  border-top: 4px solid #b22222;
-}
-
-.footer-contact {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.footer-contact a {
-  color: #fff;
-  font-size: 1.6rem;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.footer-contact a:hover {
-  color: #ff6347;
-  transform: scale(1.25) rotate(-5deg);
-  text-shadow: 0 0 8px #ff6347;
+  color: #4b2e05 !important;
+  text-shadow: none !important;
+  font-style: normal !important;
 }
 
 /* ================= Navbar ================= */
@@ -343,10 +188,6 @@ footer {
   z-index: 1000;
   box-shadow: 0 6px 18px rgba(150, 0, 0, 0.15);
   transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar:hover {
-  box-shadow: 0 8px 22px rgba(150, 0, 0, 0.25);
 }
 
 .nav-container {
@@ -407,12 +248,9 @@ footer {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ================= Responsive ================= */
+/* Responsive Navbar */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
+  .hamburger { display: flex; }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -425,41 +263,114 @@ footer {
     box-shadow: 0 8px 16px rgba(139, 0, 0, 0.15);
     z-index: 999;
   }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin-bottom: 1.2rem;
-  }
-
-  .profile {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile p {
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .skills-grid,
-  .projects-grid,
-  .downloads-grid {
-    gap: 1.2rem;
-  }
+  .nav-links.active { display: flex; }
+  .nav-links li { margin-bottom: 1.2rem; }
 }
 
-/* ================= Flower Rain Canvas ================= */
-#flower-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
+/* ================= Sections & Cards ================= */
+section {
+  max-width: 960px;
+  width: 90%;
+  margin: 2rem auto 3rem;
+  background-color: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+section:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards / Grids */
+.skills-grid,
+.projects-grid,
+.downloads-grid,
+.gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+
+.project-card,
+.download-card,
+.skill-category,
+.gallery-item {
+  padding: 1.5rem !important;
+  text-align: center !important;
+  border-radius: 16px !important;
+  background-color: #fff !important;
+  box-shadow: 0 6px 20px rgba(178, 34, 34, 0.12) !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+.project-card img,
+.download-card img,
+.skill-category img,
+.gallery-item img {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  margin-bottom: 0.8rem !important;
+  display: block !important;
+  box-shadow: 0 4px 15px rgba(178, 34, 34, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  background: #f8f8f8 !important;
+}
+
+.project-card:hover img,
+.download-card:hover img,
+.skill-category:hover img,
+.gallery-item:hover img {
+  transform: scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(178, 34, 34, 0.25);
+}
+
+.project-card h3,
+.skill-category h3,
+.download-card h3 {
+  font-size: 1.2rem !important;
+  color: #b22222 !important;
+  font-weight: 700 !important;
+  margin: 0.4rem 0 !important;
+}
+
+.project-card p,
+.skill-category p,
+.download-card p,
+.gallery-item p {
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+  color: #4b3b2b !important;
+}
+
+/* Hover effect for cards */
+.project-card:hover,
+.download-card:hover,
+.skill-category:hover,
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(178, 34, 34, 0.25) !important;
+}
+
+/* Gallery captions */
+.gallery-item p {
+  text-align: center !important;
+  margin-top: 0.5rem !important;
+  border-top: 1px solid #b22222;
+  padding-top: 0.6rem !important;
+  font-weight: 500;
+}
+
+/* Adjust first & last gallery images */
+.gallery-item:first-child img,
+.gallery-item:last-child img {
+  object-position: center 30% !important;
 }
 
 /* ================= Lightbox ================= */
@@ -485,21 +396,7 @@ footer {
   animation: zoomIn 0.4s ease;
 }
 
-@keyframes zoomIn {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.lightbox:target {
-  display: flex;
-}
+.lightbox:target { display: flex; }
 
 .lightbox-close {
   position: absolute;
@@ -507,8 +404,8 @@ footer {
   right: 40px;
   font-size: 2rem;
   color: #fff;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -517,518 +414,27 @@ footer {
   transform: rotate(90deg);
 }
 
-/* ===================== FINAL IMAGE, GRID & CARD FIX ===================== */
-
-/* Profile Images */
-.profile-img {
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  margin: 0 auto !important;
-  display: block !important;
-  box-shadow: 0 6px 20px rgba(178, 34, 34, 0.25) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.profile-img:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 12px 30px rgba(178, 34, 34, 0.35) !important;
-}
-
-/* Project / Skill / Download Images */
-.project-card img,
-.download-card img,
-.skill-category img {
-  width: 100% !important;
-  height: 180px !important;
-  object-fit: cover !important;
-  border-radius: 12px !important;
-  margin-bottom: 0.8rem !important;
-  display: block !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.project-card:hover img,
-.download-card:hover img,
-.skill-category:hover img {
-  transform: scale(1.03) !important;
-}
-
-/* Grid Layouts */
-.skills-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  gap: 1.5rem !important;
-}
-
-.projects-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-  gap: 1.5rem !important;
-}
-
-.downloads-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-  gap: 1.5rem !important;
-}
-
-/* Cards Styling */
-.project-card,
-.download-card,
-.skill-category {
-  padding: 1.5rem !important;
-  text-align: center !important;
-  border-radius: 16px !important;
-  box-shadow: 0 6px 20px rgba(178, 34, 34, 0.12) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.project-card h3,
-.skill-category h3,
-.download-card h3 {
-  font-size: 1.2rem !important;
-  color: #b22222 !important;
-  font-weight: 700 !important;
-  margin: 0.4rem 0 !important;
-}
-
-.project-card p,
-.skill-category p,
-.download-card p {
-  font-size: 0.95rem !important;
-  line-height: 1.4 !important;
-  color: #4b3b2b !important;
-}
-
-/* Responsive Adjustments */
+/* ================= Responsive Adjustments ================= */
 @media (max-width: 768px) {
-  .profile-img {
-    width: 90px !important;
-    height: 90px !important;
-  }
-
   .skills-grid,
   .projects-grid,
-  .downloads-grid {
-    gap: 1rem !important;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
-  }
-}
-
-/* ================= Gallery Images ================= */
-.gallery-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-  gap: 1.5rem !important;
-}
-
-.gallery-item {
-  padding: 1.5rem !important;
-  text-align: center !important;
-  border-radius: 16px !important;
-  box-shadow: 0 6px 20px rgba(178, 34, 34, 0.12) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.gallery-item img {
-  width: 100% !important;
-  height: 180px !important;
-  /* same as other cards */
-  object-fit: contain !important;
-  /* ensures full image visible */
-  border-radius: 12px !important;
-  margin-bottom: 0.8rem !important;
-  display: block !important;
-  background: #f8f8f8 !important;
-  /* fills empty space if aspect ratio differs */
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.03) !important;
-}
-
-/* ================= Gallery Images (Final Version) ================= */
-.gallery-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-  gap: 1.5rem !important;
-}
-
-.gallery-item {
-  padding: 1.5rem !important;
-  text-align: center !important;
-  border-radius: 16px !important;
-  box-shadow: 0 6px 20px rgba(178, 34, 34, 0.12) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  background-color: #fff !important;
-}
-
-.gallery-item img {
-  width: 100% !important;
-  height: 180px !important;
-  /* same height as other cards */
-  object-fit: contain !important;
-  /* ensures full image is visible */
-  border-radius: 12px !important;
-  margin-bottom: 0.8rem !important;
-  display: block !important;
-  background: #f8f8f8 !important;
-  /* fills empty space for non-uniform aspect ratios */
-  box-shadow: 0 4px 15px rgba(178, 34, 34, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.03) !important;
-  box-shadow: 0 8px 25px rgba(178, 34, 34, 0.25);
-}
-
-.gallery-item p {
-  font-size: 0.95rem !important;
-  line-height: 1.4 !important;
-  color: #4b3b2b !important;
-  text-align: justify !important;
-  margin-top: 0.5rem !important;
-}
-
-/* ================= Gallery Images - Focused on Faces ================= */
-.gallery-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  /* medium size */
-  gap: 1.5rem !important;
-}
-
-.gallery-item {
-  padding: 1.2rem !important;
-  text-align: center !important;
-  border-radius: 16px !important;
-  box-shadow: 0 6px 18px rgba(178, 34, 34, 0.12) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  background-color: #fff !important;
-}
-
-.gallery-item img {
-  width: 100% !important;
-  height: 200px !important;
-  /* medium size */
-  object-fit: cover !important;
-  /* crops image to focus */
-  object-position: center center !important;
-  /* center the face */
-  border-radius: 12px !important;
-  margin-bottom: 0.8rem !important;
-  display: block !important;
-  box-shadow: 0 4px 15px rgba(178, 34, 34, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05) !important;
-  box-shadow: 0 8px 25px rgba(178, 34, 34, 0.25);
-}
-
-.gallery-item p {
-  font-size: 0.95rem !important;
-  line-height: 1.4 !important;
-  color: #4b3b2b !important;
-  text-align: justify !important;
-  margin-top: 0.5rem !important;
-}
-
-/* ================= Gallery Images - Focused on Faces ================= */
-.gallery-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  /* medium size */
-  gap: 1.5rem !important;
-}
-
-.gallery-item {
-  padding: 1.2rem !important;
-  text-align: center !important;
-  border-radius: 16px !important;
-  box-shadow: 0 6px 18px rgba(178, 34, 34, 0.12) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  background-color: #fff !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.gallery-item img {
-  width: 100% !important;
-  height: 200px !important;
-  /* medium size */
-  object-fit: cover !important;
-  /* crops image to focus */
-  object-position: center top !important;
-  /* focus on upper part (faces) */
-  border-radius: 12px !important;
-  margin-bottom: 0.8rem !important;
-  display: block !important;
-  box-shadow: 0 4px 15px rgba(178, 34, 34, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-/* Lower the first and last image to show face better */
-.gallery-item:first-child img,
-.gallery-item:last-child img {
-  object-position: center 30% !important;
-  /* move down slightly */
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05) !important;
-  box-shadow: 0 8px 25px rgba(178, 34, 34, 0.25);
-}
-
-/* Captions under images with underline */
-.gallery-item p {
-  font-size: 0.95rem !important;
-  line-height: 1.4 !important;
-  color: #4b3b2b !important;
-  text-align: center !important;
-  margin-top: 0.5rem !important;
-  border-top: 1px solid #b22222;
-  /* subtle underline */
-  padding-top: 0.6rem !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .gallery-item img {
-    height: 180px !important;
-    /* slightly smaller on mobile */
-  }
-
+  .downloads-grid,
   .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
     gap: 1rem !important;
   }
-}
 
-/* =============================== 
-   Header Overlay / Red Background Removal 
-   =============================== */
-header {
-  background: none !important;
-  /* remove gradient background */
-  box-shadow: none !important;
-  /* remove shadow */
-  border-bottom: none !important;
-  /* remove bottom border */
-  padding: 2rem 1rem !important;
-  /* optional: adjust spacing */
-}
-
-#site-title {
-  background: none !important;
-  /* remove gradient on title */
-  box-shadow: none !important;
-  /* remove box shadow */
-  text-shadow: none !important;
-  /* optional: remove text glow */
-  color: #b22222 !important;
-  /* keep visible color for text */
-  padding: 0 !important;
-  letter-spacing: normal !important;
-  font-size: 3rem !important;
-  /* adjust size if needed */
-  transform: none !important;
-  /* remove hover transform effects */
-  animation: none !important;
-  /* remove glowing animation */
-}
-
-header p {
-  color: #4b2e05 !important;
-  /* optional: change description color */
-  text-shadow: none !important;
-  /* remove shadow */
-  font-style: normal !important;
-  /* optional */
-}
-
-/* Optional: keep header spacing but transparent */
-header::before {
-  content: none !important;
-}
-
-/* =============================== 
-   Magical Sparkle Overlay
-   =============================== */
-#sparkle-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1500;
-  overflow: hidden;
-}
-
-.sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, #fff9c4 0%, #ffe57f 80%);
-  border-radius: 50%;
-  opacity: 0;
-  animation: sparkleAnim 4s linear infinite;
-}
-
-@keyframes sparkleAnim {
-  0% {
-    transform: translateY(0) scale(0.5);
-    opacity: 0;
+  .gallery-item img,
+  .project-card img,
+  .download-card img,
+  .skill-category img {
+    height: 180px !important;
   }
 
-  10% {
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(-200px) scale(1);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: translateY(-400px) scale(0.5);
-    opacity: 0;
-  }
-}
-
-#cartoon-character {
-  position: fixed;
-  bottom: 20px;
-  left: -60px;
-  /* start off-screen */
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle at 50% 40%, #ffcc00 0%, #ff9900 70%);
-  border-radius: 50%;
-  /* head */
-  z-index: 2000;
-  pointer-events: none;
-  box-shadow: 0 0 10px rgba(255, 223, 0, 0.7);
-}
-
-#cartoon-character::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 20px;
-  background: #ff9900;
-  left: 20px;
-  top: 50px;
-  border-radius: 5px;
-  transform: rotate(20deg);
-  /* arm */
-}
-
-#cartoon-character::before {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 20px;
-  background: #ff9900;
-  left: 20px;
-  top: 50px;
-  border-radius: 5px;
-  transform: rotate(-20deg);
-  /* other arm */
-}
-/* ===============================
-   Professional Executive Avatar
-   (Overrides Cartoon Character)
-   =============================== */
-
-#cartoon-character {
-  position: fixed !important;
-  right: 40px !important;
-  bottom: 40px !important;
-  left: auto !important;
-  top: auto !important;
-
-  width: 90px !important;
-  height: 90px !important;
-
-  border-radius: 50% !important;
-  overflow: hidden !important;
-
-  background: radial-gradient(
-    circle at top,
-    #ffffff 0%,
-    #f0f0f0 40%,
-    #dcdcdc 100%
-  ) !important;
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35),
-    inset 0 0 0 2px rgba(255, 215, 0, 0.45),
-    inset 0 -6px 12px rgba(0, 0, 0, 0.15) !important;
-
-  z-index: 2000 !important;
-  pointer-events: none !important;
-
-  animation: executiveFloat 7s ease-in-out infinite !important;
-}
-
-/* Image inside avatar */
-#cartoon-character img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  animation: none !important;
-}
-
-/* Remove old pseudo-elements (arms, head, etc.) */
-#cartoon-character::before,
-#cartoon-character::after {
-  display: none !important;
-}
-
-/* ===============================
-   Subtle Luxury Motion
-   =============================== */
-@keyframes executiveFloat {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* ===============================
-   Soft Golden Aura (Optional Glow)
-   =============================== */
-#cartoon-character::marker {
-  display: none;
-}
-
-#cartoon-character {
-  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.25));
-}
-
-/* ===============================
-   Mobile Adjustment
-   =============================== */
-@media (max-width: 768px) {
-  #cartoon-character {
-    width: 70px !important;
-    height: 70px !important;
-    right: 20px !important;
-    bottom: 20px !important;
-  }
+  .gallery-item p { font-size: 0.9rem !important; }
 }
