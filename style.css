@@ -46,20 +46,6 @@ body::before {
   80% { opacity: 0.12; transform: scale(1); }
 }
 
-
-#cartoon-character img {
-  width: 25%;
-  height: 15%;
-  object-fit: cover;
-  border-radius: 5%;
-}
-
-@keyframes avatarFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
 /* ================= Header ================= */
 header {
   text-align: center;
